@@ -1,0 +1,53 @@
+from inverse_kinematics import inverseKinematics as ik
+import numpy as np
+
+import hiwonder.Board as Board
+import time
+
+def run_angles(angles, period):
+
+  num_steps = np.size(angles,1))
+
+  while true:
+
+    for i in range(num_steps):
+
+      for j in range(10):
+
+        Board.setBusServoPulse(servo_index[i], angles[], period)j, i
+
+t = np.linspace(0, 2 * np.pi, 10)
+
+heights = cos(t)
+
+C = ik(69)
+
+A = C.angles2values(C.set_ft_dist(100))
+A = np.squeeze(A)
+
+print(A)
+
+B = C.angles2values(C.set_ft_dist(50))
+B = np.squeeze(B)
+
+print()
+
+print(B)
+
+servo_index = np.array([5, 4, 3, 2, 1, 13, 12, 11, 10, 9]).astype(int)
+
+print(servo_index[3])
+
+while True:
+
+  for i in range(10):
+
+    Board.setBusServoPulse(servo_index[i], B[i], 1000)
+
+  time.sleep(1)
+
+  for i in range(10):
+
+    Board.setBusServoPulse(servo_index[i], A[i], 1000)
+
+  time.sleep(1)
